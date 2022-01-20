@@ -1,7 +1,9 @@
 <div class="border">
 <p id="notice"><%= notice %></p>
 
+<div class="border box-t"> 
 <h1>Tweets</h1>
+<%= render 'new', tweet: @tweet %>
 
 <table class="border">
   <thead>
@@ -15,12 +17,12 @@
     <% @tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.tweet %></td>
-        <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 </div>
 

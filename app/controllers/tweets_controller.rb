@@ -5,6 +5,11 @@ class TweetsController < ApplicationController
   # GET /tweets or /tweets.json
   def index
     @tweets = Tweet.all
+    # if @tweets == nil? 
+    #   @tweet = Tweet.create(tweet:'Hello Fellows')
+    #   @tweet.save
+    # end
+    @tweet = current_user.tweets.build
   end
 
   # GET /tweets/1 or /tweets/1.json
