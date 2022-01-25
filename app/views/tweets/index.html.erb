@@ -1,28 +1,29 @@
-<div class="border">
+<div class="border container">
 <p id="notice"><%= notice %></p>
-
-<div class="border box-t"> 
-<h1>Tweets</h1>
-<%= render 'new', tweet: @tweet %>
-
-<table class="border">
-  <thead>
-    <tr>
-      <th>Tweet</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tweets.each do |tweet| %>
+<div class="row"> 
+  <div class=""> 
+  <h1 class="border-c">Tweets</h1>
+  <%= render 'new', tweet: @tweet %>
+  <table class="border">
+    <thead>
       <tr>
-        <td><%= tweet.tweet %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Tweets</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @tweets.each do |tweet| %>
+        <tr>
+          <td class="border text-decoration-line-through"><%= tweet.user.id%></td>
+          <td><%= tweet.tweet %></td>
+          <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+          <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 </div>
 </div>
 

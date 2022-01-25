@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
     #   @tweet = Tweet.create(tweet:'Hello Fellows')
     #   @tweet.save
     # end
-    @tweet = current_user.tweets.build
+    @tweet = Tweet.new
   end
 
   # GET /tweets/1 or /tweets/1.json
