@@ -4,11 +4,7 @@ class TweetsController < ApplicationController
 
   # GET /tweets or /tweets.json
   def index
-    @tweets = Tweet.all
-    # if @tweets == nil? 
-    #   @tweet = Tweet.create(tweet:'Hello Fellows')
-    #   @tweet.save
-    # end
+    @tweets = Tweet.all.order('created_at DESC')
     @tweet = Tweet.new
   end
 
